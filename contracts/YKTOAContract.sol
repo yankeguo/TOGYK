@@ -10,18 +10,17 @@ import {ERC1155Supply} from "@openzeppelin/contracts/token/ERC1155/extensions/ER
 import {AccessControlDefaultAdminRules} from "@openzeppelin/contracts/access/extensions/AccessControlDefaultAdminRules.sol";
 
 contract YKTOAContract is ERC1155Supply, AccessControlDefaultAdminRules {
+    string public symbol = "YKTOA";
+    string public name = "YanKe's Token of Appreciation";
+
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
     constructor()
         ERC1155(
-            "https://assets.yankeguo.com/nft/chain/gnosis/token/yktoa/{id}/metadata.json"
+            "https://storage.yankeguo.com/nft/chain/gnosis/token/yktoa/{id}/metadata.json"
         )
         AccessControlDefaultAdminRules(3 days, msg.sender)
     {}
-
-    function setURI(string memory newURI) public onlyRole(DEFAULT_ADMIN_ROLE) {
-        _setURI(newURI);
-    }
 
     function supportsInterface(
         bytes4 interfaceId
@@ -37,5 +36,18 @@ contract YKTOAContract is ERC1155Supply, AccessControlDefaultAdminRules {
             interfaceId == type(IERC1155MetadataURI).interfaceId ||
             interfaceId == type(IAccessControlDefaultAdminRules).interfaceId ||
             super.supportsInterface(interfaceId);
+    }
+
+    function setURI(string memory newURI) public onlyRole(DEFAULT_ADMIN_ROLE) {
+        _setURI(newURI);
+    }
+
+    function mint(
+        address account,
+        uint256 id,
+        uint256 amount,
+        bytes memory data
+    ) public onlyRole(MINTER_ROLE) {
+        _mint(account, id, amount, data);
     }
 }

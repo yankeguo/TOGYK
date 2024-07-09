@@ -12,7 +12,7 @@ task("yktoa_deploy", "deploy YKTOA", async (taskArgs, hre) => {
   console.log("address:", signer.address);
   console.log("balance:", ethers.formatEther(balance));
   console.log("deploying contract...");
-  const YKTOA = await hre.ethers.getContractFactory("YKTOAContract");
+  const YKTOA = await hre.ethers.getContractFactory("YKTOAContract", signer);
   const contract = await YKTOA.deploy();
   console.log("contract deployed at:", await contract.getAddress());
 });
@@ -35,7 +35,6 @@ module.exports = {
     },
     chiado: {
       url: "https://rpc.chiadochain.net",
-      gasPrice: 1000000000,
       trezorDerivationPaths: [[44, 60, 0, 0, 0]],
       trezorInsecureDerivation: true,
     },
@@ -46,8 +45,8 @@ module.exports = {
         network: "chiado",
         chainId: 10200,
         urls: {
-          apiURL: "https://blockscout.com/gnosis/chiado/api",
-          browserURL: "https://blockscout.com/gnosis/chiado",
+          apiURL: "https://gnosis-chiado.blockscout.com/api",
+          browserURL: "https://gnosis-chiado.blockscout.com/",
         },
       },
       {
@@ -60,8 +59,8 @@ module.exports = {
       },
     ],
     apiKey: {
-      chiado: "",
-      gnosis: process.env.GNOSISSCAN_API_KEY,
+      chiado: process.env.BLOCKSCOUT_CHIADO_API_KEY,
+      gnosis: process.env.ETHERSCAN_GNOSIS_API_KEY,
     },
   },
 } as HardhatUserConfig;
