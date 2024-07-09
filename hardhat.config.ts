@@ -6,14 +6,14 @@ import { HardhatUserConfig } from "hardhat/config";
 import { task } from "hardhat/config";
 import { ethers } from "ethers";
 
-task("yktoa_deploy", "deploy YKTOA", async (taskArgs, hre) => {
+task("togyk_deploy", "deploy TOGYK", async (taskArgs, hre) => {
   const [signer] = await hre.ethers.getSigners();
   const balance = await signer.provider.getBalance(signer.address);
   console.log("address:", signer.address);
   console.log("balance:", ethers.formatEther(balance));
   console.log("deploying contract...");
-  const YKTOA = await hre.ethers.getContractFactory("YKTOAContract", signer);
-  const contract = await YKTOA.deploy();
+  const TOGYK = await hre.ethers.getContractFactory("TOGYK", signer);
+  const contract = await TOGYK.deploy();
   console.log("contract deployed at:", await contract.getAddress());
 });
 

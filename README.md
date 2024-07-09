@@ -1,6 +1,6 @@
-# YKTOA
+# TOGYK
 
-YanKe's Token of Appreciation
+Token of Gratitude by Yanke
 
 ## Testnet (Gnosis Chiado)
 
