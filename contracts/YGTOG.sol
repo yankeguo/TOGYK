@@ -17,7 +17,7 @@ contract YGTOG is ERC1155Supply, AccessControlDefaultAdminRules {
 
     constructor()
         ERC1155(
-            "https://storage.yankeguo.com/nft/chain/gnosis/token/togyk/{id}/metadata.json"
+            "https://storage.yankeguo.com/nft/chain/gnosis/token/YGTOG/{id}/metadata.json"
         )
         AccessControlDefaultAdminRules(3 days, msg.sender)
     {}
