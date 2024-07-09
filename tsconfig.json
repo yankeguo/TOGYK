@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2021"
+  }
+}
