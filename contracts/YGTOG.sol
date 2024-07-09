@@ -1,4 +1,4 @@
-// contracts/TOGYK.sol
+// contracts/YGTOG.sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
@@ -9,9 +9,9 @@ import {ERC1155} from "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import {ERC1155Supply} from "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol";
 import {AccessControlDefaultAdminRules} from "@openzeppelin/contracts/access/extensions/AccessControlDefaultAdminRules.sol";
 
-contract TOGYK is ERC1155Supply, AccessControlDefaultAdminRules {
-    string public symbol = "TOGYK";
-    string public name = "Token of Gratitude by Yanke";
+contract YGTOG is ERC1155Supply, AccessControlDefaultAdminRules {
+    string public symbol = "YGTOG";
+    string public name = "Token of Gratitude by Yanke Guo";
 
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 

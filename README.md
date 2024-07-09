@@ -1,6 +1,6 @@
-# TOGYK
+# YGTOG
 
-Token of Gratitude by Yanke
+Token of Gratitude by Yanke Guo
 
 ## Testnet (Gnosis Chiado)
 
