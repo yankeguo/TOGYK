@@ -4,7 +4,7 @@ Token of Gratitude by Yanke Guo
 
 ## Testnet (Gnosis Chiado)
 
-- [0xc9174F37f7C969e26d91C0A6001c424f1426c6bD](https://gnosis-chiado.blockscout.com/address/0xc9174F37f7C969e26d91C0A6001c424f1426c6bD)
+- [0x981ED8dB7e46eE4Cc164AFe9BAA07003fa69b1A2](https://gnosis-chiado.blockscout.com/address/0x981ED8dB7e46eE4Cc164AFe9BAA07003fa69b1A2)
 
 ## Credits
 
