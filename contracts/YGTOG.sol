@@ -18,6 +18,7 @@ contract YGTOG is
     ERC1155Supply
 {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+    bytes32 public constant BURNER_ROLE = keccak256("BURNER_ROLE");
 
     constructor()
         ERC1155Metadata("YGTOG", "Token of Gratitude by Yanke Guo")
@@ -28,6 +29,7 @@ contract YGTOG is
         )
     {
         _grantRole(MINTER_ROLE, msg.sender);
+        _grantRole(BURNER_ROLE, msg.sender);
     }
 
     /**
@@ -82,6 +84,20 @@ contract YGTOG is
         bytes memory data
     ) public onlyRole(MINTER_ROLE) {
         _mint(account, id, amount, data);
+    }
+
+    /**
+     * burn a token, only burner can call this function
+     * @param account account to burn from
+     * @param id id of the token
+     * @param amount amount of the token
+     */
+    function burn(
+        address account,
+        uint256 id,
+        uint256 amount
+    ) public onlyRole(BURNER_ROLE) {
+        _burn(account, id, amount);
     }
 
     /**
