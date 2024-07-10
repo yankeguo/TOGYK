@@ -26,7 +26,9 @@ contract YGTOG is
         ERC1155(
             "https://nft.yankeguo.com/tokens/YGTOG/items/{id}/metadata.json"
         )
-    {}
+    {
+        _grantRole(MINTER_ROLE, msg.sender);
+    }
 
     /**
      * set symbol, only admin can call this function
