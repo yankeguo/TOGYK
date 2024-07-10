@@ -133,5 +133,5 @@ dist
 /cache
 /artifacts
 
-# assets
-/assets
+# uploads
+/uploads
