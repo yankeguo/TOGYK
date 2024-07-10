@@ -10,8 +10,8 @@ contract ERC1155Metadata is IERC1155Metadata, ERC165 {
     string private _name;
 
     constructor(string memory symbol_, string memory name_) {
-        _name = symbol_;
-        _symbol = name_;
+        _symbol = symbol_;
+        _name = name_;
     }
 
     function symbol() public view override returns (string memory) {
