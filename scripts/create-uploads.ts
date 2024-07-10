@@ -36,7 +36,7 @@ for (const item of items) {
     fs.readFileSync(path.join("assets", "items", item), "utf-8"),
   ) as Record<string, any>;
   metadata = Object.assign(metadata, {
-    image: `${rootURL}/items/{id}/image.jpg`,
+    image: `${rootURL}/items/${idHex}/image.jpg`,
   });
   console.log("writing", idDec, idHex, metadata.name);
   const dir = path.join(rootDir, "items", idHex);
