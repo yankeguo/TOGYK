@@ -1,8 +1,8 @@
-# YGTOG
+# Token of Gratitude by Yanke Guo (YGTOG)
 
 <img src="./icon.svg" width="32" height="32" alt="icon" align="right">
 
-Token of Gratitude by Yanke Guo
+An unique and heartfelt NFT collection that celebrates the spirit of appreciation and connection. Each piece in this collection is a digital token of gratitude, expressing heartfelt thanks and recognition for the people and moments that make my life meaningful.
 
 ## Contracts
 
