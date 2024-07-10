@@ -135,3 +135,6 @@ dist
 
 # uploads
 /uploads
+
+# .env.sh
+/.env.sh
