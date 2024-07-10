@@ -4,7 +4,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "compile": "hardhat compile",
+    "deploy": "hardhat ygtog:deploy",
+    "verify": "hardhat verify"
   },
   "license": "MIT",
   "dependencies": {

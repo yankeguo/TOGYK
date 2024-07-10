@@ -6,7 +6,7 @@ import { HardhatUserConfig } from "hardhat/config";
 import { task } from "hardhat/config";
 import { ethers } from "ethers";
 
-task("ygtog_deploy", "deploy YGTOG", async (taskArgs, hre) => {
+task("ygtog:deploy", "deploy YGTOG contract", async (taskArgs, hre) => {
   const [signer] = await hre.ethers.getSigners();
   const balance = await signer.provider.getBalance(signer.address);
   console.log("address:", signer.address);
