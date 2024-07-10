@@ -1,5 +1,7 @@
 # YGTOG
 
+<img src="./icon.svg" width="32" height="32" alt="icon" align="right">
+
 Token of Gratitude by Yanke Guo
 
 ## Contracts
