@@ -132,3 +132,6 @@ dist
 # hardhat
 /cache
 /artifacts
+
+# assets
+/assets
