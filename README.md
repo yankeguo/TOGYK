@@ -2,9 +2,15 @@
 
 Token of Gratitude by Yanke Guo
 
-## Testnet (Gnosis Chiado)
+## Contracts
 
-- [0x3daB51B1A6B91A349c8b24bdD810ff9bab4D00fC](https://gnosis-chiado.blockscout.com/token/0x3daB51B1A6B91A349c8b24bdD810ff9bab4D00fC)
+**Mainnet (Gnosis)**
+
+- [0xc9174F37f7C969e26d91C0A6001c424f1426c6bD](https://gnosis.blockscout.com/token/0xc9174F37f7C969e26d91C0A6001c424f1426c6bD)
+
+**Testnet (Gnosis Chiado)**
+
+- [0xCab6850D2Ba2744102c1FBA5780ca97d94D248AD](https://gnosis-chiado.blockscout.com/token/0xCab6850D2Ba2744102c1FBA5780ca97d94D248AD)
 
 ## Credits
 

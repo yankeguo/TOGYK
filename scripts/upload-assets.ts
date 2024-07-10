@@ -2,8 +2,8 @@ import { promises as fs, createReadStream } from "node:fs";
 import path from "node:path";
 import { S3 } from "@aws-sdk/client-s3";
 
-const rootURL = "https://nft.yankeguo.com/tokens/YGTOG";
-const rootDir = path.join("uploads", "tokens", "YGTOG");
+const rootURL = "https://nft.yankeguo.com/chains/gnosis/tokens/YGTOG";
+const rootDir = path.join("uploads", "chains", "gnosis", "tokens", "YGTOG");
 
 async function buildAssets() {
   // create root directory
@@ -90,13 +90,20 @@ async function s3UploadDir(s3: S3, s3Path: string, bucket: string) {
   }
 
   const files = (await getFiles(s3Path)) as string[];
-  const uploads = files.map((filePath) =>
-    s3.putObject({
+  const uploads = files.map((filePath) => {
+    let contentType = "application/octet-stream";
+    if (filePath.endsWith(".json")) {
+      contentType = "application/json";
+    } else if (filePath.endsWith(".jpg") || filePath.endsWith(".jpeg")) {
+      contentType = "image/jpeg";
+    }
+    return s3.putObject({
       Key: path.relative(s3Path, filePath),
       Bucket: bucket,
       Body: createReadStream(filePath),
-    }),
-  );
+      ContentType: contentType,
+    });
+  });
   return Promise.all(uploads);
 }
 

@@ -53,14 +53,17 @@ module.exports = {
         network: "gnosis",
         chainId: 100,
         urls: {
-          apiURL: "https://api.gnosisscan.io/api",
-          browserURL: "https://gnosisscan.io/",
+          apiURL: "https://gnosis.blockscout.com/api",
+          browserURL: "https://gnosis.blockscout.com/",
+          //apiURL: "https://api.gnosisscan.io/api",
+          //browserURL: "https://gnosisscan.io/",
         },
       },
     ],
     apiKey: {
       chiado: process.env.BLOCKSCOUT_CHIADO_API_KEY,
-      gnosis: process.env.ETHERSCAN_GNOSIS_API_KEY,
+      gnosis: process.env.BLOCKSCOUT_GNOSIS_API_KEY,
+      //gnosis: process.env.ETHERSCAN_GNOSIS_API_KEY,
     },
   },
 } as HardhatUserConfig;

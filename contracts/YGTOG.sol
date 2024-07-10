@@ -23,9 +23,11 @@ contract YGTOG is
     constructor()
         ERC1155Metadata("YGTOG", "Token of Gratitude by Yanke Guo")
         AccessControlDefaultAdminRules(3 days, msg.sender)
-        ERC7572("https://nft.yankeguo.com/tokens/YGTOG/metadata.json")
+        ERC7572(
+            "https://nft.yankeguo.com/chains/gnosis/tokens/YGTOG/metadata.json"
+        )
         ERC1155(
-            "https://nft.yankeguo.com/tokens/YGTOG/items/{id}/metadata.json"
+            "https://nft.yankeguo.com/chains/gnosis/tokens/YGTOG/items/{id}/metadata.json"
         )
     {
         _grantRole(MINTER_ROLE, msg.sender);
