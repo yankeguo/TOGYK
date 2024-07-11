@@ -133,8 +133,8 @@ dist
 /cache
 /artifacts
 
-# uploads
-/uploads
+# packages dist
+/dist
 
 # .env.sh
 /.env.sh

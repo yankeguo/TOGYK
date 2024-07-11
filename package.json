@@ -1,18 +1,27 @@
 {
   "name": "@yankeguo/ygtog",
-  "private": true,
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.20240711223335.0",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*",
+    "assets/*"
+  ],
+  "author": {
+    "name": "Yanke Guo",
+    "email": "hi@yankeguo.com"
+  },
   "scripts": {
     "format": "prettier --write .",
-    "compile": "hardhat compile",
-    "deploy": "hardhat ygtog:deploy",
-    "verify": "hardhat verify",
-    "clean": "rimraf artifacts cache uploads",
-    "upload-assets": "ts-node scripts/upload-assets.ts"
+    "packages:build": "tsc -p tsconfig-packages.json",
+    "packages:clean": "rimraf dist tsconfig.tsbuildinfo",
+    "contract:build": "hardhat compile",
+    "contract:deploy": "hardhat ygtog:deploy",
+    "contract:verify": "hardhat verify",
+    "contract:clean": "rimraf artifacts cache",
+    "assets:upload": "ts-node scripts/assets-upload"
   },
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "@aws-sdk/client-s3": "^3.613.0",
     "@nomicfoundation/hardhat-ethers": "^3.0.6",
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
@@ -20,9 +29,7 @@
     "@openzeppelin/contracts": "^5.0.2",
     "@yankeguo/hardhat-trezor": "^0.1.4",
     "ethers": "^6.13.1",
-    "hardhat": "^2.22.6"
-  },
-  "devDependencies": {
+    "hardhat": "^2.22.6",
     "@types/node": "^20.14.10",
     "prettier": "^3.3.2",
     "rimraf": "^6.0.0",

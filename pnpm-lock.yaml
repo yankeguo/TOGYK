@@ -7,7 +7,7 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
       '@aws-sdk/client-s3':
         specifier: ^3.613.0
         version: 3.613.0
@@ -23,6 +23,9 @@ importers:
       '@openzeppelin/contracts':
         specifier: ^5.0.2
         version: 5.0.2
+      '@types/node':
+        specifier: ^20.14.10
+        version: 20.14.10
       '@yankeguo/hardhat-trezor':
         specifier: ^0.1.4
         version: 0.1.4
@@ -32,10 +35,6 @@ importers:
       hardhat:
         specifier: ^2.22.6
         version: 2.22.6(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3)
-    devDependencies:
-      '@types/node':
-        specifier: ^20.14.10
-        version: 20.14.10
       prettier:
         specifier: ^3.3.2
         version: 3.3.2
