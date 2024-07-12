@@ -13,7 +13,7 @@
   "scripts": {
     "format": "prettier --write .",
     "packages:build": "tsc -p tsconfig-packages.json",
-    "packages:clean": "rimraf dist tsconfig.tsbuildinfo",
+    "packages:clean": "rimraf dist tsconfig-packages.tsbuildinfo",
     "contract:build": "hardhat --tsconfig tsconfig-contract.json compile",
     "contract:deploy": "hardhat --tsconfig tsconfig-contract.json ygtog:deploy",
     "contract:verify": "hardhat --tsconfig tsconfig-contract.json verify",
