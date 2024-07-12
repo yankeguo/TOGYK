@@ -13,7 +13,7 @@ export namespace YGTOG {
     image: string;
   }
 
-  export interface ContractMetadata extends BaseMetadata { }
+  export interface ContractMetadata extends BaseMetadata {}
 
   export interface ItemMetadata extends BaseMetadata {
     properties: MetadataProperties;
@@ -83,25 +83,11 @@ export namespace YGTOG {
 
   const _items: _Item[] = [
     {
-      key: "test",
-      id: 1n,
-      imageFile: "1.jpg",
-      helper:
-        "This test item is for debugging purpose only and will be hidden soon.",
-      metadata: {
-        name: "Test Item",
-        description: "This is a test item.",
-        properties: {
-          Kind: "test",
-        },
-      },
-    },
-    {
       key: "github_follower_2024",
       id: 101n,
       imageFile: "101.png",
       helper:
-        "If you just followed me on GitHub, please re-connect GitHub to claim this NFT.",
+        "Follow GitHub account @yankeguo to claim this token. If you just followed on GitHub, please re-connect GitHub to claim this NFT.",
       metadata: {
         name: "GitHub Follower 2024",
         description:
