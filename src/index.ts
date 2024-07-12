@@ -1,3 +1,5 @@
+import { abi } from "./abi";
+
 export namespace YGTOG {
   export const baseUrl = "https://nft.yankeguo.com/chains/gnosis/tokens/YGTOG";
 
@@ -11,7 +13,7 @@ export namespace YGTOG {
     image: string;
   }
 
-  export interface ContractMetadata extends BaseMetadata {}
+  export interface ContractMetadata extends BaseMetadata { }
 
   export interface ItemMetadata extends BaseMetadata {
     properties: MetadataProperties;
@@ -23,6 +25,7 @@ export namespace YGTOG {
     standard: string;
     address: string;
     imageFile: string;
+    abi: any;
     metadata: {
       name: string;
       description: string;
@@ -34,6 +37,7 @@ export namespace YGTOG {
     standard: "EIP-1155",
     address: "0xc9174F37f7C969e26d91C0A6001c424f1426c6bD",
     imageFile: "contract.jpg",
+    abi,
     metadata: {
       name: "Token of Gratitude by Yanke Guo",
       description:
@@ -45,6 +49,7 @@ export namespace YGTOG {
     chain: string;
     standard: string;
     address: string;
+    abi: any;
     metadataUrl: string;
     imageFile: string;
     metadata: ContractMetadata;
