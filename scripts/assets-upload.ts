@@ -3,18 +3,6 @@ import path from "node:path";
 import { S3 } from "@aws-sdk/client-s3";
 import { YGTOG } from "../src";
 
-function trimInternalFields(v: Record<string, any>): Record<string, any> {
-  const keys = Object.keys(v);
-  const result: Record<string, any> = {};
-  for (const key of keys) {
-    if (key.startsWith("_")) {
-      continue;
-    }
-    result[key] = v[key];
-  }
-  return result;
-}
-
 function detectContentType(filename: string): string {
   if (filename.endsWith(".json")) {
     return "application/json";
@@ -29,20 +17,20 @@ function detectContentType(filename: string): string {
 }
 
 async function uploadItem<
-  T extends { _metadataUrl: string; _imageFile: string; image: string },
+  M extends { image: string },
+  T extends { metadataUrl: string; imageFile: string; metadata: M },
 >(s3: S3, value: T) {
-  const metadataURL = new URL(value._metadataUrl);
+  const metadataURL = new URL(value.metadataUrl);
   const metadataKey = metadataURL.pathname.slice(1);
-  const imageURL = new URL(value.image);
+  const imageURL = new URL(value.metadata.image);
   const imageKey = imageURL.pathname.slice(1);
-  const metadata = trimInternalFields(value);
 
   console.log("uploading", metadataKey);
 
   await s3.putObject({
     Key: metadataKey,
     Bucket: process.env.S3_BUCKET!,
-    Body: JSON.stringify(metadata, null, 2),
+    Body: JSON.stringify(value.metadata, null, 2),
     ContentType: "application/json",
   });
 
@@ -51,8 +39,8 @@ async function uploadItem<
   await s3.putObject({
     Key: imageKey,
     Bucket: process.env.S3_BUCKET!,
-    Body: createReadStream(path.join("assets", value._imageFile)),
-    ContentType: detectContentType(value._imageFile),
+    Body: createReadStream(path.join("assets", value.imageFile)),
+    ContentType: detectContentType(value.imageFile),
   });
 }
 
