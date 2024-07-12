@@ -1,6 +1,6 @@
 {
   "name": "@yankeguo/ygtog",
-  "version": "0.20240712211105.0",
+  "version": "0.20240712211447.0",
   "main": "dist/index.js",
   "files": [
     "dist/*",
