@@ -87,7 +87,7 @@ export namespace YGTOG {
       id: 101n,
       imageFile: "101.png",
       helper:
-        "Follow GitHub account @yankeguo to claim this token. If you just followed on GitHub, please re-connect GitHub to claim this NFT.",
+        "Follow GitHub account <em>@yankeguo</em> to claim this token. If you just followed on GitHub, please <em>re-connect GitHub</em> to claim this NFT.",
       metadata: {
         name: "GitHub Follower 2024",
         description:

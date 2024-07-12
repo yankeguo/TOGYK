@@ -6,6 +6,13 @@ import { HardhatUserConfig } from "hardhat/config";
 import { task } from "hardhat/config";
 import { ethers } from "ethers";
 
+task("ygtog:check", "deploy YGTOG contract", async (taskArgs, hre) => {
+  const [signer] = await hre.ethers.getSigners();
+  const balance = await signer.provider.getBalance(signer.address);
+  console.log("address:", signer.address);
+  console.log("balance:", ethers.formatEther(balance));
+});
+
 task("ygtog:deploy", "deploy YGTOG contract", async (taskArgs, hre) => {
   const [signer] = await hre.ethers.getSigners();
   const balance = await signer.provider.getBalance(signer.address);
@@ -28,6 +35,11 @@ module.exports = {
     },
   },
   networks: {
+    base: {
+      url: "https://mainnet.base.org",
+      trezorDerivationPaths: [[44, 60, 0, 0, 0]],
+      trezorInsecureDerivation: true,
+    },
     gnosis: {
       url: "https://rpc.gnosischain.com",
       trezorDerivationPaths: [[44, 60, 0, 0, 0]],
