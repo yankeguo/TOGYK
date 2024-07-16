@@ -98,6 +98,21 @@ export namespace YGTOG {
         },
       },
     },
+    {
+      key: "twitter_follower_2024",
+      id: 102n,
+      imageFile: "102.png",
+      helper: `Follow Twitter account <a href="https://twitter.com/yankeguo" target="_blank">@yankeguo</a> to claim this token. If you just followed on Twitter, please <b>re-connect Twitter</b> to claim this NFT.`,
+      metadata: {
+        name: "Twitter Follower 2024",
+        description: `Thank you for following me on Twitter! This NFT is a token of my gratitude for your support. (As I'm not willing to pay the $100 per month Twitter developer plan required to verify followers, anyone with Twitter account connected can mint this NFT.)`,
+        properties: {
+          Kind: "Social",
+          Year: "2024",
+          Platform: "Twitter",
+        },
+      },
+    },
   ];
 
   export interface Item {
