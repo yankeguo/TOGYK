@@ -74,6 +74,7 @@ export namespace YGTOG {
     id: bigint;
     imageFile: string;
     helper: string;
+    hidden?: boolean;
     metadata: {
       name: string;
       description: string;
@@ -113,11 +114,28 @@ export namespace YGTOG {
         },
       },
     },
+    {
+      key: "special_thanks_to_brother_b",
+      id: 1001n,
+      hidden: true,
+      imageFile: "1001.png",
+      helper:
+        "This is a special token of gratitude for my brother B. Thank you for being there for me!",
+      metadata: {
+        name: "Special Thanks to Brother B",
+        description:
+          "This is a special token of gratitude for Brother B (@binsonning). Thank you for being there for me!",
+        properties: {
+          Kind: "Special",
+        },
+      },
+    },
   ];
 
   export interface Item {
     key: string;
     id: bigint;
+    hidden?: boolean;
     imageFile: string;
     helper: string;
     metadataUrl: string;
